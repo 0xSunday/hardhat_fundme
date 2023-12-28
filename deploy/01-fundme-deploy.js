@@ -5,7 +5,6 @@ const {
 } = require("../helper-hardhat-config");
 const { verify } = require("../utils/verify");
 module.exports = async ({ getNamedAccounts, deployments }) => {
-
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
@@ -25,14 +24,22 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log: true,
     waitConfirmations: network.config.blockConfirmations || 1,
   });
-  log(`FundMe deployed at ${fundMe.address}`)
+  log(`FundMe deployed at ${fundMe.address}`);
 
   if (
     !developmentChains.includes(network.name) &&
     process.env.ETHERSCAN_API_KEY
-) {
-    await verify(fundMe.address, [ethUsdPriceFeedAddress])
-}
-
+  ) {
+    await verify(fundMe.address, [ethUsdPriceFeedAddress]);
+  }
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉successfully deployed🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
+  log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉"); 
 };
-module.exports.tags = ["all", "fundme"]
+module.exports.tags = ["all", "fundme"];
